@@ -1,9 +1,20 @@
-import React from 'react';
+import React from 'react'
+import ClanListAll from './HomeClanList-all/ClanListAll';
+import ClanListNew from './HomeClanList-newly/ClanListNew';
+import HomeHeader from './HomeHeader/HomeHeader';
+import HomeHero from './HomeHero/HomeHero';
+import HomeSearchbar from './HomeSearchbar/HomeSearchbar';
 
-export default function HomePresenter() {
+const HomePresenter: React.FC = () => {
   return (
     <>
-      <h1 className="font-Pretendard">HomePresenter</h1>
+      <HomeHeader />
+      <HomeHero />
+      <ClanListNew />
+      <HomeSearchbar />
+      <ClanListAll />
     </>
-  );
+  )
 }
+
+export default HomePresenter
