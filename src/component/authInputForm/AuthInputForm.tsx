@@ -3,7 +3,10 @@ import {
   AuthInputFormProps,
 } from './AuthInputFormInterfaces';
 
-const InputForm = ({ isLoginPage, data }: AuthInputFormProps): JSX.Element => {
+const AuthInputForm = ({
+  isLoginPage,
+  data,
+}: AuthInputFormProps): JSX.Element => {
   return (
     <>
       <header>
@@ -14,24 +17,31 @@ const InputForm = ({ isLoginPage, data }: AuthInputFormProps): JSX.Element => {
       {data.map((item: AuthFormInputItem) => {
         return (
           <div key={item.id} className="my-2 w-10/12 ">
-            <div className="mb-2 pl-4">
+            <div className="flex flex-col lg:flex-row mb-2 pl-4">
               <span className="mr-2 text-slate-600">{item.title}</span>
-              <span className="text-red-600 text-sm">{item.errorMsg}</span>
+              <span className="text-red-600 text-xs lg:text-sm">
+                {item.errorMsg}
+              </span>
             </div>
-            <input
-              type="text"
-              name={item.title}
-              className={`${
-                item.button ? 'w-8/12' : 'w-10/12 lg:w-9/12 '
-              }  ml-8 mb-4 p-2 border-b border-solid border-slate-300`}
-            />
-            {item.button ? (
-              <button className="ml-4 p-1 border border-slate-400 rounded-md text-slate-400 text-sm">
-                중복 확인
-              </button>
-            ) : (
-              ''
-            )}
+            <div className="flex mx-auto">
+              <input
+                type={item.type}
+                name={item.title}
+                className={`${
+                  item.button ? 'w-8/12 ' : 'w-10/12 lg:w-9/12 '
+                }  ml-8 mb-4 p-2 border-b border-solid border-slate-300`}
+              />
+              {item.button ? (
+                <button
+                  disabled
+                  className="disabled:opacity-50 ml-4 p-1 h-8 border border-slate-400 rounded-md text-slate-400 text-xs lg:text-sm"
+                >
+                  {item.validate}
+                </button>
+              ) : (
+                ''
+              )}
+            </div>
           </div>
         );
       })}
@@ -39,4 +49,4 @@ const InputForm = ({ isLoginPage, data }: AuthInputFormProps): JSX.Element => {
   );
 };
 
-export default InputForm;
+export default AuthInputForm;

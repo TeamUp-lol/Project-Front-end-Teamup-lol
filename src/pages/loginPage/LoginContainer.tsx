@@ -2,30 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AuthInputForm from '../../component/authInputForm/AuthInputForm';
 import {
-  AuthFormInputItem,
+  AuthContainerProps,
   SocialLoginImg,
 } from '../../component/authInputForm/AuthInputFormInterfaces';
-
-type LoginContainerProps = {
-  data: AuthFormInputItem[];
-  socialLoginImg: SocialLoginImg[];
-};
 
 const LoginContainer = ({
   data,
   socialLoginImg,
-}: LoginContainerProps): JSX.Element => {
+  handleValues,
+}: AuthContainerProps): JSX.Element => {
   const isLoginPage = true;
   return (
     <div className="relative flex justify-center mx-auto mt-10 p-12 w-96 lg:w-[900px] border border-solid border-slate-300">
       <img
         className="absolute right-10 w-16 h-10 lg:w-24 lg:h-14"
-        src="/assets/images/whiteLogo.png"
+        src="/assets/images/image-whiteLogo.png"
         alt="logo image"
       />
       <section className="flex">
         <form className="flex flex-col items-center w-96 lg:mr-4 ">
-          <AuthInputForm isLoginPage={isLoginPage} data={data} />
+          <AuthInputForm
+            isLoginPage={isLoginPage}
+            data={data}
+            handleValues={handleValues}
+          />
           <button className="mt-5 w-56 h-12 lg:w-72 bg-violet-600 rounded-lg text-white">
             로그인
           </button>
@@ -41,16 +41,17 @@ const LoginContainer = ({
             </p>
           </div>
           <div className="flex mt-8">
-            {socialLoginImg.map((img: SocialLoginImg) => {
-              return (
-                <img
-                  key={img.id}
-                  className={img.style}
-                  src={`src/assets/images/login/${img.name}`}
-                  alt={`${img.alt} image`}
-                />
-              );
-            })}
+            {socialLoginImg &&
+              socialLoginImg.map((img: SocialLoginImg) => {
+                return (
+                  <img
+                    key={img.id}
+                    className={img.style}
+                    src={`src/assets/images/login/${img.name}`}
+                    alt={`${img.alt} image`}
+                  />
+                );
+              })}
           </div>
           <div className="mt-8 text-slate-600">
             <Link to="/findEmail">아이디</Link>/
@@ -61,7 +62,7 @@ const LoginContainer = ({
         <aside className="flex justify-center pt-14  border-l hidden lg:block">
           <img
             className="w-96 mx-6"
-            src="src/assets/images/login/hero.png"
+            src="src/assets/images/login/image-hero.png"
             alt="hero image"
           />
         </aside>

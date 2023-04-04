@@ -19,19 +19,19 @@ export const SOCIAL_IMG = [
   {
     id: 1,
     style: 'w-16 h-12 mx cursor-pointer',
-    name: 'google_icon.png',
+    name: 'image-google_icon.png',
     alt: 'google_icon',
   },
   {
     id: 2,
     style: 'w-12 h-12 mx-2 cursor-pointer',
-    name: 'kakao_icon.png',
+    name: 'image-kakao_icon.png',
     alt: 'kakao_icon',
   },
   {
     id: 3,
     style: 'w-12 h-12 mx-2 cursor-pointer',
-    name: 'naver_icon.png',
+    name: 'image-naver_icon.png',
     alt: 'naver_icon',
   },
 ];
