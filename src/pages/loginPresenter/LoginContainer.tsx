@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AuthInputForm from '../../component/authInputForm/AuthInputForm';
 import {
-  LoginContainerProps,
+  AuthContainerProps,
   SocialLoginImg,
 } from '../../component/authInputForm/AuthInputFormInterfaces';
 
 const LoginContainer = ({
   data,
   socialLoginImg,
-}: LoginContainerProps): JSX.Element => {
+}: AuthContainerProps): JSX.Element => {
   const isLoginPage = true;
   return (
     <div className="relative flex justify-center mx-auto mt-10 p-12 w-96 lg:w-[900px] border border-solid border-slate-300">
@@ -36,16 +36,17 @@ const LoginContainer = ({
             </p>
           </div>
           <div className="flex mt-8">
-            {socialLoginImg.map((img: SocialLoginImg) => {
-              return (
-                <img
-                  key={img.id}
-                  className={img.style}
-                  src={`src/assets/images/login/${img.name}`}
-                  alt={`${img.alt} image`}
-                />
-              );
-            })}
+            {socialLoginImg &&
+              socialLoginImg.map((img: SocialLoginImg) => {
+                return (
+                  <img
+                    key={img.id}
+                    className={img.style}
+                    src={`src/assets/images/login/${img.name}`}
+                    alt={`${img.alt} image`}
+                  />
+                );
+              })}
           </div>
           <div className="mt-8 text-slate-600">
             <Link to="/findEmail">아이디</Link>/

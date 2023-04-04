@@ -8,10 +8,6 @@ export interface AuthFormInputItem {
   errorMsg?: string;
 }
 
-export interface IsLoginPageProps {
-  isLoginPage: boolean;
-}
-
 export interface SocialLoginImg {
   id: number;
   style: string;
@@ -24,7 +20,7 @@ export interface AuthInputFormProps {
   data: AuthFormInputItem[];
 }
 
-export interface LoginContainerProps {
+export interface AuthContainerProps {
   data: AuthFormInputItem[];
-  socialLoginImg: SocialLoginImg[];
+  socialLoginImg?: SocialLoginImg[];
 }
