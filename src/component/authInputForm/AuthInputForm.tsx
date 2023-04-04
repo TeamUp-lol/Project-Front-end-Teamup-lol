@@ -3,7 +3,10 @@ import {
   AuthInputFormProps,
 } from './AuthInputFormInterfaces';
 
-const InputForm = ({ isLoginPage, data }: AuthInputFormProps): JSX.Element => {
+const AuthInputForm = ({
+  isLoginPage,
+  data,
+}: AuthInputFormProps): JSX.Element => {
   return (
     <>
       <header>
@@ -39,4 +42,4 @@ const InputForm = ({ isLoginPage, data }: AuthInputFormProps): JSX.Element => {
   );
 };
 
-export default InputForm;
+export default AuthInputForm;

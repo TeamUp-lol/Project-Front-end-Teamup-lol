@@ -2,14 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AuthInputForm from '../../component/authInputForm/AuthInputForm';
 import {
-  AuthFormInputItem,
+  LoginContainerProps,
   SocialLoginImg,
 } from '../../component/authInputForm/AuthInputFormInterfaces';
-
-type LoginContainerProps = {
-  data: AuthFormInputItem[];
-  socialLoginImg: SocialLoginImg[];
-};
 
 const LoginContainer = ({
   data,

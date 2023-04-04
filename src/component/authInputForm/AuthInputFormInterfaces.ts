@@ -23,3 +23,8 @@ export interface AuthInputFormProps {
   isLoginPage: boolean;
   data: AuthFormInputItem[];
 }
+
+export interface LoginContainerProps {
+  data: AuthFormInputItem[];
+  socialLoginImg: SocialLoginImg[];
+}
