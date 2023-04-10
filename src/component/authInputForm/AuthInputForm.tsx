@@ -6,6 +6,7 @@ import {
 const AuthInputForm = ({
   isLoginPage,
   data,
+  handleValues,
 }: AuthInputFormProps): JSX.Element => {
   return (
     <>
@@ -22,11 +23,12 @@ const AuthInputForm = ({
               <span className="text-red-600 text-sm">{item.errorMsg}</span>
             </div>
             <input
-              type="text"
-              name={item.title}
+              type={item.type}
+              name={item.name}
               className={`${
                 item.button ? 'w-8/12' : 'w-10/12 lg:w-9/12 '
               }  ml-8 mb-4 p-2 border-b border-solid border-slate-300`}
+              onChange={handleValues}
             />
             {item.button ? (
               <button className="ml-4 p-1 border border-slate-400 rounded-md text-slate-400 text-sm">

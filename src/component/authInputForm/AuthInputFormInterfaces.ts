@@ -18,9 +18,17 @@ export interface SocialLoginImg {
 export interface AuthInputFormProps {
   isLoginPage: boolean;
   data: AuthFormInputItem[];
+  handleValues: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface AuthContainerProps {
   data: AuthFormInputItem[];
   socialLoginImg?: SocialLoginImg[];
+  handleValues: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+export interface InputValues {
+  email: string;
+  pwd: string;
+  rePwd?: string;
+  nickname?: string;
 }

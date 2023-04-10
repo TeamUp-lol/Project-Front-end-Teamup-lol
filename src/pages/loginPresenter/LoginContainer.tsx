@@ -9,6 +9,7 @@ import {
 const LoginContainer = ({
   data,
   socialLoginImg,
+  handleValues,
 }: AuthContainerProps): JSX.Element => {
   const isLoginPage = true;
   return (
@@ -20,7 +21,11 @@ const LoginContainer = ({
       />
       <section className="flex">
         <form className="flex flex-col items-center w-96 lg:mr-4 ">
-          <AuthInputForm isLoginPage={isLoginPage} data={data} />
+          <AuthInputForm
+            isLoginPage={isLoginPage}
+            data={data}
+            handleValues={handleValues}
+          />
           <button className="mt-5 w-56 h-12 lg:w-72 bg-violet-600 rounded-lg text-white">
             로그인
           </button>
